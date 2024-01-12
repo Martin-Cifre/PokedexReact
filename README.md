@@ -1,0 +1,2 @@
+# PokedexReact
+Pokedex en React
