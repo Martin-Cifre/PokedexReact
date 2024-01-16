@@ -1,4 +1,6 @@
 import styles from './header.module.css';
+import pokeFinder from '../assets/logo.png';
+
 type HeaderProps = {
     query: string;
     setQuery: (query: string) => void;
@@ -7,6 +9,7 @@ type HeaderProps = {
 const Header = ({ query, setQuery }: HeaderProps) => {
   return (
     <header className={styles.header}>
+      <img src={pokeFinder} alt="logo"/>
       <input
         className={styles.input}
         placeholder="Busca un pokemon"

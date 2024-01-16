@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Header from "../components/header";
+import Footer from "../components/footer";
+import pikaEsta from "../assets/esta.jpg";
 
 const Pokemons = () => {
     const [query, SetQuery] = useState("");
@@ -7,11 +9,9 @@ const Pokemons = () => {
       <>
         <Header query={query} setQuery={SetQuery} />
         <main>
-          <h1>POKEMON</h1>
+          <img src={pikaEsta} alt="paraTito" />
         </main>
-        <footer>
-          <h2>footer</h2>
-        </footer>
+        <Footer />
       </>
     );
  };
