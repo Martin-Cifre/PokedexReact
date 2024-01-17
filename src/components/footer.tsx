@@ -15,8 +15,9 @@ const Footer = () => {
           Pokemons
         </Link>
 
-        <Link to="/Items">
+        <Link className={styles.footerLink} to="/Items">
           <img
+            className={styles.Icon}
             width="48"
             height="48"
             src="https://img.icons8.com/color/48/open-pokeball--v2.png"
@@ -24,8 +25,9 @@ const Footer = () => {
           />
           Items
         </Link>
-        <Link to="/Map">
+        <Link className={styles.footerLink} to="/Map">
           <img
+            className={styles.Icon}
             width="48"
             height="48"
             src="https://img.icons8.com/color/48/pointer.png"
