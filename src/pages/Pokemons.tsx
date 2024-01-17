@@ -14,7 +14,7 @@ const Pokemons = () => {
           <Link className={styles.listItem} to="./">
             <img
               className={styles.listItemIcon}
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/1.gif"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
               alt="bulbasaur"
             />
             <div className={styles.lastItemText}>
@@ -26,7 +26,7 @@ const Pokemons = () => {
           <Link className={styles.listItem} to="./">
             <img
               className={styles.listItemIcon}
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/2.gif"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
               alt="bulbasaur"
             />
             <div className={styles.lastItemText}>
@@ -38,7 +38,7 @@ const Pokemons = () => {
           <Link className={styles.listItem} to="./">
             <img
               className={styles.listItemIcon}
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/3.gif"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
               alt="bulbasaur"
             />
             <div className={styles.lastItemText}>
