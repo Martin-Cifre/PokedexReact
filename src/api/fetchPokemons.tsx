@@ -17,7 +17,7 @@ export async function fetchPokemon(): Promise<Pokemon[]> {
     const pokemons = results.results.map((pokemon: any) => ({
       name: pokemon.name,
       id: pokemon.national_number,
-      imgSrc: `https://img.pokemondb.net/sprites/black-white/anim/normal/${formatPokemonName(pokemon.name)}.gif`,
+      imgSrc: `https://img.pokemondb.net/sprites/black-white/anim/normal/${formatPokemonName(pokemon.name.toLowerCase())}.gif`,
     }));
 
         const uniquePokemons = pokemons.filter(
