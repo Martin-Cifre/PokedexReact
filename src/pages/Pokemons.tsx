@@ -1,87 +1,46 @@
 import styles from "./pokemons.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import { fetchPokemon } from "../api/fetchPokemons";
+import { Pokemon } from "../types/types";
+
 
 const Pokemons = () => {
   const [query, SetQuery] = useState("");
+  const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+
+  useEffect(() => {
+    const fetchAllPokemons = async () => {
+      const allPokemons = await fetchPokemon();
+      setPokemons(allPokemons);
+    }
+    fetchAllPokemons();
+
+  }, []);
   return (
     <>
       <Header query={query} setQuery={SetQuery} />
       <main>
         <nav>
-          <Link className={styles.listItem} to="./">
-            <img
-              className={styles.listItemIcon}
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
-              alt="bulbasaur"
-            />
-            <div className={styles.lastItemText}>
-              <span>Bulbasaur</span>
-              <span>#001</span>
-            </div>
-          </Link>
-
-          <Link className={styles.listItem} to="./">
-            <img
-              className={styles.listItemIcon}
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
-              alt="bulbasaur"
-            />
-            <div className={styles.lastItemText}>
-              <span>Ivisaur</span>
-              <span>#002</span>
-            </div>
-          </Link>
-
-          <Link className={styles.listItem} to="./">
-            <img
-              className={styles.listItemIcon}
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
-              alt="bulbasaur"
-            />
-            <div className={styles.lastItemText}>
-              <span>Venaasaur</span>
-              <span>#003</span>
-            </div>
-          </Link>
-
-          <Link className={styles.listItem} to="./">
-            <img
-              className={styles.listItemIcon}
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
-              alt="bulbasaur"
-            />
-            <div className={styles.lastItemText}>
-              <span>Charmander</span>
-              <span>#004</span>
-            </div>
-          </Link>
-
-          <Link className={styles.listItem} to="./">
-            <img
-              className={styles.listItemIcon}
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png"
-              alt="bulbasaur"
-            />
-            <div className={styles.lastItemText}>
-              <span>Charmeleon</span>
-              <span>#005</span>
-            </div>
-          </Link>
-
-          <Link className={styles.listItem} to="./">
-            <img
-              className={styles.listItemIcon}
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
-              alt="bulbasaur"
-            />
-            <div className={styles.lastItemText}>
-              <span>Charizard</span>
-              <span>#006</span>
-            </div>
-          </Link>
+          {pokemons?.slice(0, 151).map((pokemon) => (
+            <Link
+              key={pokemon.id}
+              className={styles.listItem}
+              to={`/pokemons/${pokemon.name.toLowerCase()}`}
+            >
+              <img
+                className={styles.listItemIcon}
+                src={pokemon.imgSrc}
+                alt={pokemon.name}
+              />
+              <div className={styles.lastItemText}>
+                <span>{pokemon.name}</span>
+                <span>#{pokemon.id}</span>
+              </div>
+            </Link>
+          ))}
         </nav>
       </main>
       <Footer />
