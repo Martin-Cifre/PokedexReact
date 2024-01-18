@@ -46,6 +46,42 @@ const Pokemons = () => {
               <span>#003</span>
             </div>
           </Link>
+
+          <Link className={styles.listItem} to="./">
+            <img
+              className={styles.listItemIcon}
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+              alt="bulbasaur"
+            />
+            <div className={styles.lastItemText}>
+              <span>Charmander</span>
+              <span>#004</span>
+            </div>
+          </Link>
+
+          <Link className={styles.listItem} to="./">
+            <img
+              className={styles.listItemIcon}
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png"
+              alt="bulbasaur"
+            />
+            <div className={styles.lastItemText}>
+              <span>Charmeleon</span>
+              <span>#005</span>
+            </div>
+          </Link>
+
+          <Link className={styles.listItem} to="./">
+            <img
+              className={styles.listItemIcon}
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
+              alt="bulbasaur"
+            />
+            <div className={styles.lastItemText}>
+              <span>Charizard</span>
+              <span>#006</span>
+            </div>
+          </Link>
         </nav>
       </main>
       <Footer />

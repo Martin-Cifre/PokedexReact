@@ -9,29 +9,27 @@ const Footer = () => {
             className={styles.Icon}
             width="48"
             height="48"
-            src="https://img.icons8.com/color/48/bullbasaur.png"
-            alt="bullbasaur"
+            src="https://img.icons8.com/color/48/open-pokeball--v2.png"
+            alt="open-pokeball--v2"
           />
           Pokemons
         </Link>
 
         <Link className={styles.footerLink} to="/Items">
           <img
-            className={styles.Icon}
             width="48"
             height="48"
-            src="https://img.icons8.com/color/48/open-pokeball--v2.png"
-            alt="open-pokeball--v2"
+            src="https://img.icons8.com/fluency/48/backpack.png"
+            alt="backpack"
           />
           Items
         </Link>
         <Link className={styles.footerLink} to="/Map">
           <img
-            className={styles.Icon}
             width="48"
             height="48"
-            src="https://img.icons8.com/color/48/pointer.png"
-            alt="pointer"
+            src="https://img.icons8.com/color/48/map-pokemon.png"
+            alt="map-pokemon"
           />
           Mapa
         </Link>
