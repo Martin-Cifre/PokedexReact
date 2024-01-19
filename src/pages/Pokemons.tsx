@@ -19,12 +19,18 @@ const Pokemons = () => {
     fetchAllPokemons();
 
   }, []);
+
+ const filteredPokemon = pokemons
+   .slice(0, 649)
+   .filter((pokemon) => pokemon.name.toLowerCase().match(query.toLowerCase()));
+
+
   return (
     <>
       <Header query={query} setQuery={SetQuery} />
       <main>
-        <nav>
-          {pokemons?.slice(0, 151).map((pokemon) => (
+        <nav className={styles.nav}>
+          {filteredPokemon?.slice(0, 649).map((pokemon) => (
             <Link
               key={pokemon.id}
               className={styles.listItem}
