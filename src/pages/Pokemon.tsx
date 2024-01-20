@@ -5,7 +5,6 @@ import Footer from "../components/footer";
 import styles from "./pokemon.module.css";
 import { pokemonDetails } from "../types/types";
 
-
 const Pokemon = () => {
   const [pokemon, setPokemon] = useState<pokemonDetails>();
   const { name } = useParams();
@@ -20,17 +19,23 @@ const Pokemon = () => {
   }, [name]);
 
   const convertToKilograms = (weightInDecigrams: number): string => {
-    const weightInKilograms = weightInDecigrams * 0.1;
-    return weightInKilograms.toFixed(2);
+    return (weightInDecigrams * 0.1).toFixed(2);
   };
 
   const convertToMeters = (heightInDecimeters: number): string => {
-    const heightInMeters = heightInDecimeters * 0.1;
-    return heightInMeters.toFixed(2);
+    return (heightInDecimeters * 0.1).toFixed(2);
   };
 
   const getPaddedId = (id: number): string => {
     return id.toString().padStart(3, "0");
+  };
+
+  const getTypeClass = (type: string | undefined): string => {
+    if (!type) {
+      return styles.pokemonType;
+    }
+    const lowercasedType = type.toLowerCase();
+    return styles[lowercasedType] || styles.pokemonType;
   };
 
   return (
@@ -58,9 +63,11 @@ const Pokemon = () => {
             alt={pokemon?.name}
           />
 
-          <div> {pokemon?.tipo} </div>
-          <div> Altura: {pokemon ? convertToMeters(pokemon.altura) : ""} m</div>
-          <div> Peso: {pokemon ? convertToKilograms(pokemon.peso) : ""} kg</div>
+          <div className={getTypeClass(pokemon?.tipo)}>{pokemon?.tipo}</div>
+        <div className={styles.otrosDatos}>
+          <div> <b>Altura:</b> {pokemon ? convertToMeters(pokemon.altura) : ""} m</div>
+          <div> <b>Peso:</b> {pokemon ? convertToKilograms(pokemon.peso) : ""} kg</div>
+        </div>  
         </main>
       </div>
 
