@@ -83,6 +83,14 @@
 
 }
 
+.descripcion{
+    padding: 50px;
+    width: 50%;
+    background-color: #bbbbbb;
+    color: white;
+    border-radius: 20px;
+    margin: 50px;
+}
 
 /* Estilos para cada tipo de Pokemon */
 .fire,
@@ -113,22 +121,22 @@
 }
 
 .fire {background-color: var(--color-fire); color: white; }
-.grass { background-color: var(--color-grass); color: black; }
-.steel {background-color: var(--color-steel); color: black; }
+.grass { background-color: var(--color-grass); color: white; }
+.steel {background-color: var(--color-steel); color: white; }
 .water { background-color: var(--color-water); color: white; }
 .psychic { background-color: var(--color-psychic); color: white; }
-.ground { background-color: var(--color-ground); color: black; }
-.ice { background-color: var(--color-ice); color: black; }
-.flying { background-color: var(--color-flying); color: black; }
+.ground { background-color: var(--color-ground); color: white; }
+.ice { background-color: var(--color-ice); color: white; }
+.flying { background-color: var(--color-flying); color: white; }
 .ghost { background-color: var(--color-ghost); color: white; }
-.normal { background-color: var(--color-normal); color: black; }
+.normal { background-color: var(--color-normal); color: white; }
 .poison { background-color: var(--color-poison); color: white; }
-.rock { background-color: var(--color-rock); color: black; }
+.rock { background-color: var(--color-rock); color: white; }
 .fighting { background-color: var(--color-fighting); color: white; }
 .dark { background-color: var(--color-dark); color: white; }
-.bug { background-color: var(--color-bug); color: black; }
+.bug { background-color: var(--color-bug); color: white; }
 .dragon { background-color: var(--color-dragon); color: white; }
-.electric { background-color: var(--color-electric); color: black; }
+.electric { background-color: var(--color-electric); color: white; }
 .fairy { background-color: var(--color-fairy); color: black; }
 .shadow { background-color: var(--color-shadow); color: white; }
 .unknown { background-color: var(--color-unknown); color: white; }

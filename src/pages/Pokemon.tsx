@@ -64,10 +64,20 @@ const Pokemon = () => {
           />
 
           <div className={getTypeClass(pokemon?.tipo)}>{pokemon?.tipo}</div>
-        <div className={styles.otrosDatos}>
-          <div> <b>Altura:</b> {pokemon ? convertToMeters(pokemon.altura) : ""} m</div>
-          <div> <b>Peso:</b> {pokemon ? convertToKilograms(pokemon.peso) : ""} kg</div>
-        </div>  
+          <div className={styles.otrosDatos}>
+            <div>
+              {" "}
+              <b>Altura:</b> {pokemon ? convertToMeters(pokemon.altura) : ""} m
+            </div>
+            <div>
+              {" "}
+              <b>Peso:</b> {pokemon ? convertToKilograms(pokemon.peso) : ""} kg
+            </div>
+          </div>
+          <div className={styles.descripcion}>
+            <b>Descripcion:</b>
+            <p>{pokemon?.descripcion || "No hay descripción disponible"}</p>
+          </div>
         </main>
       </div>
 

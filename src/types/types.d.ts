@@ -5,10 +5,11 @@ export type Pokemon = {
 }
 
 export type pokemonDetails = {
-    name: string;
-    id: number;
-    imgSrc: string;
-    tipo: string;
-    altura: number;
-    peso: number;
-}
+  name: string;
+  id: number;
+  imgSrc: string;
+  tipo: string;
+  altura: number;
+  peso: number;
+  descripcion: string | null;
+};
