@@ -22,7 +22,7 @@ const Footer = () => {
             src="https://img.icons8.com/fluency/48/backpack.png"
             alt="backpack"
           />
-          Items
+          Items (no disponible)
         </Link>
         <Link className={styles.footerLink} to="/Map">
           <img
@@ -31,7 +31,7 @@ const Footer = () => {
             src="https://img.icons8.com/color/48/map-pokemon.png"
             alt="map-pokemon"
           />
-          Mapa
+          Mapa (no disponible)
         </Link>
       </footer>
     );

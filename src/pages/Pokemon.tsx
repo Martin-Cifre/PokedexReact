@@ -1,11 +1,34 @@
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { fetchPokemon } from "../api/fetchPokemon";
 import Footer from "../components/footer";
-import styles from './pokemon.module.css';
-/*import { fetchPokemon } from "../api/fetchPokemons";*/
+import styles from "./pokemon.module.css";
+import { pokemonDetails } from "../types/types";
+
 
 const Pokemon = () => {
+  const [pokemon, setPokemon] = useState<pokemonDetails>();
   const { name } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    async function getPokemon() {
+      const fetchedPokemon = await fetchPokemon(name as string);
+      setPokemon(fetchedPokemon);
+    }
+    getPokemon();
+  }, [name]);
+
+  const convertToKilograms = (weightInDecigrams: number): string => {
+    const weightInKilograms = weightInDecigrams * 0.1;
+    return weightInKilograms.toFixed(2);
+  };
+
+  const convertToMeters = (heightInDecimeters: number): string => {
+    const heightInMeters = heightInDecimeters * 0.1;
+    return heightInMeters.toFixed(2);
+  };
+
   return (
     <>
       <button className={styles.backButton} onClick={() => navigate(-1)}>
@@ -16,21 +39,21 @@ const Pokemon = () => {
           src="https://img.icons8.com/officel/80/pokedex.png"
           alt="pokedex"
         />
-          Volver
+        Volver
       </button>
       <div className={styles.pokemon}>
         <main className={styles.pokemonInfo}>
           <div className={styles.pokemonName}>{name}</div>
-          <div>#004</div>
+          <div>#{pokemon?.id}</div>
           <img
             className={styles.pokemonImg}
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
-            alt="charmander"
+            src={pokemon?.imgSrc}
+            alt={pokemon?.name}
           />
 
-          <div> Tipo: fuego </div>
-          <div> Altura: 60 cm </div>
-          <div> Peso: 8,5 kg </div>
+          <div> {pokemon?.tipo} </div>
+          <div> Altura: {pokemon ? convertToMeters(pokemon.altura) : ""} m</div>
+          <div> Peso: {pokemon ? convertToKilograms(pokemon.peso) : ""} kg</div>
         </main>
       </div>
 
