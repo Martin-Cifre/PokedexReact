@@ -29,6 +29,10 @@ const Pokemon = () => {
     return heightInMeters.toFixed(2);
   };
 
+  const getPaddedId = (id: number): string => {
+    return id.toString().padStart(3, "0");
+  };
+
   return (
     <>
       <button className={styles.backButton} onClick={() => navigate(-1)}>
@@ -44,7 +48,10 @@ const Pokemon = () => {
       <div className={styles.pokemon}>
         <main className={styles.pokemonInfo}>
           <div className={styles.pokemonName}>{name}</div>
-          <div>#{pokemon?.id}</div>
+          <div className={styles.pokemonId}>
+            #{pokemon ? getPaddedId(pokemon.id) : ""}
+          </div>
+
           <img
             className={styles.pokemonImg}
             src={pokemon?.imgSrc}

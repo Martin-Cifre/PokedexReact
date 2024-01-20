@@ -1,6 +1,6 @@
 footer {
     padding: 10px;
-    background: black;
+    background: #252627;
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -14,7 +14,7 @@ footer {
     align-items: center;
     text-align: center;
     text-decoration: none;
-    color: white;
+    color: #F0F4EF;
     margin: 10px 0;
     font: 12px;
 }

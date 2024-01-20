@@ -9,14 +9,15 @@ type HeaderProps = {
 const Header = ({ query, setQuery }: HeaderProps) => {
   return (
     <header className={styles.header}>
-      <img src={pokeFinder} alt="logo"/>
+      <img
+        className={styles.logo}
+        src={pokeFinder} alt="logo" />
       <input
         className={styles.input}
         placeholder="Busca un pokemon"
         type="text"
         value={query}
         onChange={(event) => setQuery(event.target.value)}
-              
       />
     </header>
   );
