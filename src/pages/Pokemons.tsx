@@ -2,7 +2,7 @@ import styles from "./pokemons.module.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/header";
-import Footer from "../components/footer";
+/*import Footer from "../components/footer";*/
 import { fetchPokemon } from "../api/fetchPokemons";
 import { Pokemon } from "../types/types";
 
@@ -49,7 +49,7 @@ const Pokemons = () => {
           ))}
         </nav>
       </main>
-      <Footer />
+      {/*<Footer />*/}
     </>
   );
 };
