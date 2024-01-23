@@ -4,7 +4,7 @@
 
 ## Proyecto Desplegado
 
-Puedes acceder y explorar la Pokedex en vivo a través de este enlace: [Pokedex React](https://poke-react-m5qljd4ke-martincifres-projects.vercel.app/)
+Puedes acceder y explorar la Pokedex en vivo a través de este enlace: [Pokedex React](https://poke-react-mu.vercel.app/)
 
 ## Instrucciones de Uso
 
